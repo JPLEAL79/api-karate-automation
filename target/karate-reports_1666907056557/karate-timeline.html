@@ -1,0 +1,32 @@
+<!DOCTYPE HTML>
+<html lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <title>Karate Timeline</title>
+    <style>
+      body, html { font-family: arial, sans-serif; font-size: 11pt; }
+      #visualization { box-sizing: border-box; width: 100%; height: 300px; }
+      .vis-item.failed { background-color: #F2928C; }
+      .page-heading { padding: 0.5em; margin-bottom: 0.5em; background-color: lightcyan; border: 1px solid gray; }
+    </style>
+    <script src="res/vis.min.js"></script>
+    <link href="res/vis.min.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body>
+    <div class="page-heading">
+      <a href="karate-summary.html">Summary</a>
+    </div>     
+    <div id="visualization"></div>
+    <script>
+var groups = [{"content":"main","id":1}];
+var items = [{"id":1,"group":1,"content":"src\/test\/java\/api\/booking\/get-booking[3.1:31]","start":1666907040093,"end":1666907041242,"title":"src\/test\/java\/api\/booking\/get-booking[3.1:31] 22:44:00.093-22:44:01.242 Get booking details table","className":"failed"},{"id":2,"group":1,"content":"src\/test\/java\/api\/booking\/get-booking[3.2:32]","start":1666907041261,"end":1666907041677,"title":"src\/test\/java\/api\/booking\/get-booking[3.2:32] 22:44:01.261-22:44:01.677 Get booking details table","className":"failed"},{"id":3,"group":1,"content":"src\/test\/java\/api\/booking\/get-booking[3.3:33]","start":1666907041694,"end":1666907042209,"title":"src\/test\/java\/api\/booking\/get-booking[3.3:33] 22:44:01.694-22:44:02.209 Get booking details table","className":"failed"},{"id":4,"group":1,"content":"src\/test\/java\/api\/booking\/get-booking[3.4:34]","start":1666907042215,"end":1666907042747,"title":"src\/test\/java\/api\/booking\/get-booking[3.4:34] 22:44:02.215-22:44:02.747 Get booking details table","className":"failed"},{"id":5,"group":1,"content":"src\/test\/java\/api\/booking\/get-booking[3.5:35]","start":1666907042765,"end":1666907043274,"title":"src\/test\/java\/api\/booking\/get-booking[3.5:35] 22:44:02.765-22:44:03.274 Get booking details table"}];
+</script>
+    <script>
+      var container = document.getElementById('visualization');
+      var timeline = new vis.Timeline(container);
+      timeline.setOptions({groupOrder: 'content'});
+      timeline.setGroups(new vis.DataSet(groups));
+      timeline.setItems(new vis.DataSet(items));
+    </script>
+  </body>
+</html>

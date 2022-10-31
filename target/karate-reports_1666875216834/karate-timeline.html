@@ -1,0 +1,32 @@
+<!DOCTYPE HTML>
+<html lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <title>Karate Timeline</title>
+    <style>
+      body, html { font-family: arial, sans-serif; font-size: 11pt; }
+      #visualization { box-sizing: border-box; width: 100%; height: 300px; }
+      .vis-item.failed { background-color: #F2928C; }
+      .page-heading { padding: 0.5em; margin-bottom: 0.5em; background-color: lightcyan; border: 1px solid gray; }
+    </style>
+    <script src="res/vis.min.js"></script>
+    <link href="res/vis.min.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body>
+    <div class="page-heading">
+      <a href="karate-summary.html">Summary</a>
+    </div>     
+    <div id="visualization"></div>
+    <script>
+var groups = [{"content":"main","id":1}];
+var items = [{"id":1,"group":1,"content":"src\/test\/java\/api\/booking\/get-booking[3.1:31]","start":1666874491699,"end":1666874493169,"title":"src\/test\/java\/api\/booking\/get-booking[3.1:31] 13:41:31.699-13:41:33.169 Get booking details table"},{"id":2,"group":1,"content":"src\/test\/java\/api\/booking\/get-booking[3.2:32]","start":1666874493176,"end":1666874493651,"title":"src\/test\/java\/api\/booking\/get-booking[3.2:32] 13:41:33.176-13:41:33.651 Get booking details table"},{"id":3,"group":1,"content":"src\/test\/java\/api\/booking\/get-booking[3.3:33]","start":1666874493659,"end":1666874494161,"title":"src\/test\/java\/api\/booking\/get-booking[3.3:33] 13:41:33.659-13:41:34.161 Get booking details table"},{"id":4,"group":1,"content":"src\/test\/java\/api\/booking\/get-booking[3.4:34]","start":1666874494169,"end":1666874494667,"title":"src\/test\/java\/api\/booking\/get-booking[3.4:34] 13:41:34.169-13:41:34.667 Get booking details table"},{"id":5,"group":1,"content":"src\/test\/java\/api\/booking\/get-booking[3.5:35]","start":1666874494673,"end":1666874495195,"title":"src\/test\/java\/api\/booking\/get-booking[3.5:35] 13:41:34.673-13:41:35.195 Get booking details table"}];
+</script>
+    <script>
+      var container = document.getElementById('visualization');
+      var timeline = new vis.Timeline(container);
+      timeline.setOptions({groupOrder: 'content'});
+      timeline.setGroups(new vis.DataSet(groups));
+      timeline.setItems(new vis.DataSet(items));
+    </script>
+  </body>
+</html>
